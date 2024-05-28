@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from util import utils as util
 
 from database.client.IDatabaseClient import IDatabaseClient
 
@@ -30,7 +31,7 @@ class MongoClientI(IDatabaseClient):
 
     def update(self, table_name, item):
         logging.log(logging.INFO, f'Updating {item} in {table_name} table')
-        item_as_map = item.__dict__
+        item_as_map = util.to_dict(item)
         self.db[table_name].update_one({'_chat_id': item_as_map['_chat_id']}, {'$set': item_as_map})
 
     def delete(self, table_name, _id):

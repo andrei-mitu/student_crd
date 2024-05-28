@@ -1,8 +1,8 @@
-from model.models import Course
+from model.models import Note
 
 
 class User:
-    def __init__(self, chat_id, username, email=None, idnp=None, notes: list[Course] = None):
+    def __init__(self, chat_id, username, email=None, idnp=None, notes: list[Note] = None):
         self._idnp = idnp
         self._email = email
         self._notes = notes

@@ -1,5 +1,6 @@
 [//]: # (#TODO:: Add description to README.md)
-one_player_bot is an Telegram bot for .....
+student_crd_bot is a Telegram bot that helps students to manage their academic records. 
+It is built using Python and MongoDB.
 
 This app can be easily managed and is highly scalable and customizable.
 
@@ -12,5 +13,9 @@ Steps to run this project:
     ```
     BOT_TOKEN=
     MONGO_URI=
+    SUPABASE_URL=
+    SUPABASE_KEY=
     WEB_DRIVER_LOCATION= (if not set in system path)
     ```
+
+https://t.me/student_crd_bot
