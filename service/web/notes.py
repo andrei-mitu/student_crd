@@ -1,12 +1,11 @@
 import time
-from typing import List
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 import service.web.webdriver as webdriver
-from model.models import Note, Course
+from model.models import Note
 
 USM_LINK = 'http://studentcrd.usm.md/Default.aspx'
 LABEL_XPATH = '/html/body/div/div[3]/form/p[1]/input'

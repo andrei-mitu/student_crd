@@ -38,14 +38,14 @@ class Handler:
         self.bot.register_next_step_handler(message, self.get_notes)
 
     def welcome(self, message: Message):
-        markup = (types.ReplyKeyboardMarkup(resize_keyboard=True).add(
-            types.KeyboardButton("Notes")))
-
+        exists = types.ReplyKeyboardMarkup(resize_keyboard=True).add(types.KeyboardButton("Notes"))
+        new = types.ReplyKeyboardMarkup(resize_keyboard=True).add(types.KeyboardButton("Notes")).add(
+            types.KeyboardButton("Configure"))
         if userRepo.exists(message.chat.id):
-            self.bot.send_message(message.chat.id, f"Welcome back {message.chat.username}!", reply_markup=markup)
+            self.bot.send_message(message.chat.id, f"Welcome back {message.chat.username}!", reply_markup=exists)
         else:
             self.bot.send_message(message.chat.id, "Welcome to Student Crd Bot!")
-            self.bot.send_message(message.chat.id, "Would you like to configure your account?", reply_markup=markup)
+            self.bot.send_message(message.chat.id, "Would you like to configure your account?", reply_markup=new)
 
     def on_start(self, message):
         self.welcome(message)

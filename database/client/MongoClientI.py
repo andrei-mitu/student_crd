@@ -30,8 +30,8 @@ class MongoClientI(IDatabaseClient):
         return item
 
     def update(self, table_name, item):
-        logging.log(logging.INFO, f'Updating {item} in {table_name} table')
         item_as_map = util.to_dict(item)
+        logging.log(logging.INFO, f'Updating {item_as_map} in {table_name} table')
         self.db[table_name].update_one({'_chat_id': item_as_map['_chat_id']}, {'$set': item_as_map})
 
     def delete(self, table_name, _id):
