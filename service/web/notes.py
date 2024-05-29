@@ -14,7 +14,7 @@ NOTES_TAB_XPATH = '/html/body/div/form/nav/div/a[3]'
 
 
 def fetch_data(driver, semester=None):
-    time.sleep(2)
+    time.sleep(1)
     semester = semester if semester is not None and semester != 'Skip' else 'last()'
     note_xpath = f"/html/body/div/form/div[4]/div[3]/div/table[{semester}]/tbody/tr/td[2]"
 

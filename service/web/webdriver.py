@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.service import Service
 
 def chrome_options() -> Options:
     options = Options()
-    options.headless = True
+    options.add_argument("--headless")
     options.page_load_strategy = 'normal'
     return options
 

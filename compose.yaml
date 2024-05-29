@@ -1,0 +1,11 @@
+services:
+  bot:
+    container_name: bot
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+      MONGO_URI: ${MONGO_URI}
+      WEB_DRIVER_LOCATION: ${WEB_DRIVER_LOCATION}
+    build:
+      context: .
+    ports:
+      - 8081:8081
